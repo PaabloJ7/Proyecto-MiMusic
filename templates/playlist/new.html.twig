@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crear nueva lista de reproducción{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        /* Estilos para el formulario en modo oscuro */
+        body {
+            background-color: #2c2c2c; /* Color de fondo oscuro */
+            color: #ffffff; /* Color del texto blanco */
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #404040; /* Color de fondo para el formulario */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff; /* Color del texto blanco */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffffff; /* Color del texto blanco */
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            background-color: #555; /* Color de fondo para input y button */
+            color: #ffffff; /* Color del texto blanco */
+            border: 1px solid #777; /* Borde gris oscuro */
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50; /* Color verde para el botón */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Estilo para mensajes de error */
+        .error-message {
+            color: #ff0000; /* Color rojo */
+            margin-top: 5px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Crear nueva lista de reproducción</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.Nombre) }}
+    {{ form_row(form.ImagenFile) }}
+    {{ form_row(form.canciones) }} 
+    {{ form_row(form._token) }}
+    <button type="submit">Crear Playlist</button>
+    {{ form_end(form) }}
+{% endblock %}
