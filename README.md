@@ -1,4 +1,3 @@
-```markdown
 # 🎵 MiMusic - Tu Plataforma Musical (Proyecto Final - Desarrollo Web en Entorno Servidor)
 
 ![MiMusic Banner](https://raw.githubusercontent.com/PaabloJ7/Proyecto-MiMusic/main/client/src/assets/banner-mimusic.png)
@@ -128,12 +127,7 @@ cd ../client && npm run dev
 "La música es el lenguaje universal" - MiMusic 2025
 ```
 
-### Características destacables:
-1. **Enfoque musical claro**: Estructurado específicamente para un clon de Spotify
-2. **Diagrama visual**: Gráfico de tarta mostrando distribución de funcionalidades
-3. **Instrucciones específicas**: Configuración para API de Spotify incluida
-4. **Sección de capturas**: Muestra interfaz real del proyecto
-5. **Roadmap visual**: Con emojis y checkboxes para seguimiento
+
 
 ¿Necesitas que añada alguna sección adicional? Por ejemplo:
 - Detalles técnicos de la integración con Spotify API
