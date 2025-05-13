@@ -1,121 +1,134 @@
-# 🎵 MiMusic - Tu Plataforma Musical (Proyecto Final - Desarrollo Web en Entorno Servidor)
+Aquí tienes el README.md adaptado para tu proyecto MiMusic con React (sin Tailwind) y MySQL:
+
+```markdown
+# 🎵 MiMusic - Plataforma Musical con React y MySQL
 
 ![MiMusic Banner](https://raw.githubusercontent.com/PaabloJ7/Proyecto-MiMusic/main/client/src/assets/banner-mimusic.png)
 
-**¡Hola! 👋 Soy Pablo de la Sierra**, y este es mi proyecto final de **Desarrollo Web en Entorno Servidor**: **MiMusic**, un clon de Spotify con funcionalidades básicas desarrollado con tecnologías modernas.
+**Proyecto Final de Desarrollo Web en Entorno Servidor**  
+**Autor**: Pablo de la Sierra
 
 ## 🌟 Visión del Proyecto
-MiMusic es una plataforma de streaming musical que permite:
-> "Explorar, descubrir y disfrutar de tu música favorita como en Spotify, pero con tu toque personal"
+MiMusic replica las funcionalidades básicas de Spotify con:
+- 🎵 Reproductor musical personalizado
+- 📚 Gestión de biblioteca personal
+- 🔍 Motor de búsqueda de canciones
+- 👤 Sistema de usuarios y perfiles
 
-**Características principales**:
-- 🎧 Reproductor de audio con controles básicos (play/pause, volumen, progreso)
-- 📂 Gestión de biblioteca musical
-- 🔍 Búsqueda de canciones y artistas
-- 📱 Diseño responsive (adaptable a móviles)
-
-## 🛠 Stack Tecnológico
+## 🛠 Tecnologías Utilizadas
 
 ### Frontend
-![React](https://img.shields.io/badge/React-18.2-%2361DAFB) 
+![React](https://img.shields.io/badge/React-18.2-%2361DAFB)
 ![Vite](https://img.shields.io/badge/Vite-4.4-%646CFF)
-![Tailwind](https://img.shields.io/badge/Tailwind-3.3-%2338B2AC)
+![Sass](https://img.shields.io/badge/Sass-1.69-%23CC6699)  <!-- Sin Tailwind -->
 
 ### Backend
-![Node](https://img.shields.io/badge/Node-18.16-%23339933) 
+![Node.js](https://img.shields.io/badge/Node.js-18.16-%23339933)
 ![Express](https://img.shields.io/badge/Express-4.18-%23000000)
-![MongoDB](https://img.shields.io/badge/MongoDB-6.0-%2347A248)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-%234479A1)  <!-- MySQL en lugar de MongoDB -->
 
-### APIs Externas
-- Spotify Web API (para datos de canciones)
-- JWT (autenticación segura)
+### Autenticación
+![JWT](https://img.shields.io/badge/JWT-Auth-%23000000)
 
-## 🎨 Características Clave
+## 🎨 Características Principales
 
+### 1. Reproductor Musical Avanzado
 ```mermaid
-pie title Funcionalidades Principales
-    "Reproductor musical" : 40
-    "Gestión de biblioteca" : 25
-    "Búsqueda inteligente" : 20
-    "Perfiles de usuario" : 15
+flowchart TD
+    A[Player] --> B[Controles Play/Pause]
+    A --> C[Barra de Progreso]
+    A --> D[Control de Volumen]
+    A --> E[Información de Canción]
 ```
 
-### 1. Reproductor Musical
-- Controles de reproducción básicos
-- Barra de progreso interactiva
-- Volumen ajustable
-- Información del artista/álbum
-
-### 2. Gestión de Biblioteca
-- Creación/eliminación de playlists
-- Favoritos
+### 2. Gestión de Contenido
+- Creación y edición de playlists
+- Sistema de favoritos
 - Historial de reproducción
+- Clasificación por géneros
 
-### 3. Búsqueda
-- Búsqueda por: canción, artista, álbum
+### 3. Búsqueda Inteligente
+- Filtrado por: canciones, artistas, álbumes
 - Resultados en tiempo real
-- Sugerencias automáticas
+- Búsqueda por letras
 
 ## � Estructura del Proyecto
 
 ```
 📦 Proyecto-MiMusic
-├── 📂 client/            # Frontend React
+├── 📂 client/              # Frontend React
 │   ├── src/
-│   │   ├── components/  # Componentes reutilizables
-│   │   ├── pages/       # Vistas principales
-│   │   ├── hooks/       # Custom hooks
-│   │   └── utils/       # Utilidades
+│   │   ├── assets/        # Imágenes y estilos
+│   │   ├── components/    # Componentes reutilizables
+│   │   ├── scss/          # Estilos con Sass  <!-- Sin Tailwind -->
+│   │   └── services/      # Conexión con API
 │
-├── 📂 server/           # Backend Node.js
-│   ├── controllers/     # Lógica de endpoints
-│   ├── models/          # Modelos de MongoDB
-│   ├── routes/          # Rutas API
-│   └── middleware/      # Autenticación
+├── 📂 server/             # Backend Node.js
+│   ├── config/
+│   │   └── database.js    # Configuración MySQL
+│   ├── models/            # Modelos de datos
+│   ├── routes/            # Endpoints API
+│   └── utils/             # Utilidades
 │
-├── 📂 docs/             # Documentación
-└── 📜 README.md         # Este archivo
+├── 📂 database/           # Scripts MySQL
+│   ├── schema.sql         # Esquema de base de datos
+│   └── seeds.sql          # Datos iniciales
+└── 📜 README.md
 ```
 
-## 🚀 Instalación Local
+## 🚀 Instalación y Configuración
 
-### Requisitos previos
+### Requisitos
 - Node.js 18+
-- MongoDB
-- Cuenta de desarrollador Spotify (para API)
+- MySQL 8.0+
+- Navegador moderno
 
-### Pasos:
+### Pasos de instalación:
+
+1. **Clonar repositorio**
 ```bash
-# 1. Clonar repositorio
 git clone https://github.com/PaabloJ7/Proyecto-MiMusic.git
 cd Proyecto-MiMusic
+```
 
-# 2. Configurar backend
+2. **Configurar base de datos MySQL**
+```bash
+mysql -u root -p < database/schema.sql
+mysql -u root -p < database/seeds.sql
+```
+
+3. **Configurar backend**
+```bash
 cd server
 cp .env.example .env
-# Editar .env con tus credenciales
+# Editar .env con tus credenciales de MySQL
 npm install
+```
 
-# 3. Configurar frontend
+4. **Configurar frontend**
+```bash
 cd ../client
 npm install
+```
 
-# 4. Iniciar servidores
-# En una terminal:
+5. **Iniciar aplicación**
+```bash
+# En una terminal (backend):
 cd ../server && npm start
-# En otra terminal:
+
+# En otra terminal (frontend):
 cd ../client && npm run dev
 ```
 
 ## 🔍 Capturas de Pantalla
-![Player](https://raw.githubusercontent.com/PaabloJ7/Proyecto-MiMusic/main/docs/screenshots/player.png)
-![Biblioteca](https://raw.githubusercontent.com/PaabloJ7/Proyecto-MiMusic/main/docs/screenshots/library.png)
+![Interfaz Principal](https://raw.githubusercontent.com/PaabloJ7/Proyecto-MiMusic/main/docs/screenshots/player.png)
+![Vista de Búsqueda](https://raw.githubusercontent.com/PaabloJ7/Proyecto-MiMusic/main/docs/screenshots/search.png)
 
-## 📌 Roadmap Futuro
-- [ ] Integración completa con Spotify API
+## 📌 Próximas Mejoras
+- [x] Base de datos MySQL implementada
+- [ ] Integración con API de Spotify
 - [ ] Sistema de recomendaciones
-- [ ] Modo oscuro/claro
-- [ ] Compartir playlists
+- [ ] Subida de canciones propias
 
 ## 📬 Contacto
 **Autor**: Pablo de la Sierra  
@@ -124,12 +137,5 @@ cd ../client && npm run dev
 
 ---
 
-"La música es el lenguaje universal" - MiMusic 2025
+"Donde tu música cobra vida" - MiMusic 2024
 ```
-
-
-
-¿Necesitas que añada alguna sección adicional? Por ejemplo:
-- Detalles técnicos de la integración con Spotify API
-- Explicación del sistema de autenticación JWT
-- Guía para contribuciones
