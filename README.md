@@ -1,6 +1,3 @@
-Aquí tienes el README.md adaptado para tu proyecto MiMusic con React (sin Tailwind) y MySQL:
-
-```markdown
 # 🎵 MiMusic - Plataforma Musical con React y MySQL
 
 ![MiMusic Banner](https://raw.githubusercontent.com/PaabloJ7/Proyecto-MiMusic/main/client/src/assets/banner-mimusic.png)
